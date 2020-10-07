@@ -57,26 +57,25 @@ export class GridComponent implements OnInit {
     });
   }
 
-  onSearchChange(newValue):void{
+  onSearchChange(newValue: any):void{
     this.apiService.searchBy(newValue).subscribe({
       next: result => this.heroes = result.data,
       complete: () => console.log('done')
     });
   }
 
-  onCellValueChanged($event):void {
-    console.log($event);
-    this.apiService.update($event.data).subscribe({
+  onCellValueChanged(cell : any):void {
+    this.apiService.update(cell.data).subscribe({
       next: result => console.log(result),
-      complete: () => console.log(`${$event.data.id} deleted.`)
+      complete: () => console.log(`${cell.data.id} deleted.`)
     });
   }  
 
-  onGridReady(params):void {
+  onGridReady(params:any):void {
     this.gridApi = params.api;
   }
 
-  onSelectionChanged(event):void {
+  onSelectionChanged(event:any):void {
     this.selectedRows = this.gridApi.getSelectedRows();
     console.log(this.selectedRows);
     

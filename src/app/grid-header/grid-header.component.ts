@@ -23,7 +23,7 @@ export class GridHeaderComponent implements OnInit {
     this.onDelete.emit();
   }
 
-  search(quary):void{
+  search(quary : string):void{
     this.onSearch.emit(quary);
   }
 }
