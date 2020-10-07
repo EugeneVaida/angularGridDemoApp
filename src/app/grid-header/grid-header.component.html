@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col">
+      <delete-btn [itemsCount]="itemsCount" (onClick)="delete()"></delete-btn>
+    </div>
+    <div class="col-3 ml-auto">
+      <grid-form (onSearch)="search($event)"></grid-form>
+    </div>
+  </div>
