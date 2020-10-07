@@ -11,16 +11,15 @@ import { AgGridAngular } from 'ag-grid-angular';
 export class GridComponent implements OnInit {
 
   @ViewChild('agGrid') agGrid: AgGridAngular;
-  title = 'angularGridDemoApp';
-  searchString = '';
+  title : string = 'angularGridDemoApp';
+  searchString : string = '';
   heroes: any[];
   selectedRows: any[] = [];
-  private gridApi;
-  private gridColumnApi;
+  private gridApi : any;  
 
   constructor(private apiService: ApiService){}
   
-  gridOptions = {
+  gridOptions : Object = {
     defaultColDef: {
       editable: true,
       sortable: true,
@@ -31,7 +30,7 @@ export class GridComponent implements OnInit {
     }    
   };
 
-  columnDefs = [
+  columnDefs: any[] = [
     { field: 'id', checkboxSelection: true },
     { field: 'actualCompany', filter: 'agTextColumnFilter',  },
     { field: 'actualJobTitle', filter: 'agTextColumnFilter' },
@@ -75,7 +74,6 @@ export class GridComponent implements OnInit {
 
   onGridReady(params) {
     this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
   }
 
   onSelectionChanged(event) {
