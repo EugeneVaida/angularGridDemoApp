@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  configUrl = "http://80.249.81.144:8056/api/data";
+  configUrl = "http://4c1e3d2d5f9a.ngrok.io/api/data";
 
   getData():Observable<any>{    
     return this.fetch(`${this.configUrl}/get`);
