@@ -18,7 +18,7 @@ export class DeleteBtnComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  delete() {
+  delete():void {
     this.onClick.emit();
   }
 

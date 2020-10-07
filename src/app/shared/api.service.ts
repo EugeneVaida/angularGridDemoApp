@@ -13,19 +13,19 @@ export class ApiService {
 
   configUrl = "http://80.249.81.144:8056/api/data";
 
-  getData() {    
+  getData():Observable<any>{    
     return this.fetch(`${this.configUrl}/get`);
   }
 
-  searchBy(string){
+  searchBy(string):Observable<any>{
     return this.fetch(`${this.configUrl}/get?searchByText=${string}`);
   }
 
-  update(object){
+  update(object):Observable<any>{
     return this.http.put(`${this.configUrl}/update`, object);
   }
 
-  delete(id){
+  delete(id):Observable<any>{
     return this.http.delete(`${this.configUrl}/delete?id=${id}`);
   }
 

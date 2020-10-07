@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'angularGridDemoApp';
+  title : string = 'angularGridDemoApp';
   constructor(){}
   ngOnInit(){ }
 }

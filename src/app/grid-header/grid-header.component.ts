@@ -19,11 +19,11 @@ export class GridHeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  delete(){
+  delete():void{
     this.onDelete.emit();
   }
 
-  search(quary){
+  search(quary):void{
     this.onSearch.emit(quary);
   }
 }

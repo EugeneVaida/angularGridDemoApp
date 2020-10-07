@@ -46,7 +46,7 @@ export class GridComponent implements OnInit {
   ];
   
 
-  ngOnInit(){
+  ngOnInit():void{
     this.getData();
   }
 
@@ -57,14 +57,14 @@ export class GridComponent implements OnInit {
     });
   }
 
-  onSearchChange(newValue){
+  onSearchChange(newValue):void{
     this.apiService.searchBy(newValue).subscribe({
       next: result => this.heroes = result.data,
       complete: () => console.log('done')
     });
   }
 
-  onCellValueChanged($event) {
+  onCellValueChanged($event):void {
     console.log($event);
     this.apiService.update($event.data).subscribe({
       next: result => console.log(result),
@@ -72,17 +72,17 @@ export class GridComponent implements OnInit {
     });
   }  
 
-  onGridReady(params) {
+  onGridReady(params):void {
     this.gridApi = params.api;
   }
 
-  onSelectionChanged(event) {
+  onSelectionChanged(event):void {
     this.selectedRows = this.gridApi.getSelectedRows();
     console.log(this.selectedRows);
     
   }
 
-  delete(){
+  delete():void{
     console.log('onDelete');
     this.selectedRows.map((selectedObj, index) => {
       this.apiService.delete(selectedObj.id).subscribe({

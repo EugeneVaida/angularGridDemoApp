@@ -20,12 +20,12 @@ export class GridFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.gridForm.get("search").valueChanges.subscribe(x => {
-      this.onSearch.emit(x);
+    this.gridForm.get("search").valueChanges.subscribe(searchQuary => {
+      this.onSearch.emit(searchQuary);
     });
   }
 
-  clearSearchInput(){
+  clearSearchInput():void{
     this.searchCtrl.setValue('');
   }
 
