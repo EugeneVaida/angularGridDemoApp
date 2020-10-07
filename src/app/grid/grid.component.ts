@@ -67,7 +67,7 @@ export class GridComponent implements OnInit {
   onCellValueChanged(cell : any):void {
     this.apiService.update(cell.data).subscribe({
       next: result => console.log(result),
-      complete: () => console.log(`${cell.data.id} deleted.`)
+      complete: () => console.log(`${cell.data.id} changed.`)
     });
   }  
 
